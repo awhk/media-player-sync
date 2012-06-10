@@ -38,6 +38,13 @@ public class MediaPlayerSync {
 		menubar.add(filemenu);
 		menubar.add(editmenu);
 		frame.setJMenuBar(menubar);
+		
+		layout.row().left().add(new JLabel("Enter or select peer to connect to:"));
+		
+		String[] connectList = {"","Tom","Shawn","Matt"};
+		JComboBox<String> connect = new JComboBox<String>(connectList);
+		connect.setEditable(true);
+		layout.row().center().add(connect);
 
 		layout.row().center().add(new JButton("Connect"));
 		
