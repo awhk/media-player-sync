@@ -4,6 +4,8 @@ import javax.swing.*;
 
 import net.java.dev.designgridlayout.*;
 
+import java.awt.Font;
+
 public class MediaPlayerSync {
 
 	/**
@@ -37,20 +39,20 @@ public class MediaPlayerSync {
 		menubar.add(editmenu);
 		frame.setJMenuBar(menubar);
 
-		layout.row().grid().add(new JButton("Connect"));
-		layout.row()
-				.grid(new JLabel(
-						"Currently listening for incoming connections."))
-				.add(new JButton("Stop"));
+		layout.row().center().add(new JButton("Connect"));
+		
+		JLabel incomingConn = new JLabel("Currently listening for incoming connections.");
+		//Create font.  
+		//Font Name : Default label font  
+		//Font Style : Italic  
+		//Font Size : Default label font size  
+		Font incomingConnFont=new Font(incomingConn.getFont().getName(),Font.ITALIC,incomingConn.getFont().getSize());
+		incomingConn.setFont(incomingConnFont); 
+		layout.row().grid(incomingConn).add(new JButton("Stop"));
 
 		frame.add(top);
 		frame.pack();
 		frame.setVisible(true);
 
 	}
-
-	public static JButton button() {
-		return new JButton("Button");
-	}
-
 }
