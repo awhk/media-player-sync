@@ -48,6 +48,12 @@ public class MediaPlayerSync {
 
 		layout.row().center().add(new JButton("Connect"));
 		
+		String[] headers = {"Client", "Response Time"};
+		String[][] data = {{"",""},{"",""}};
+		JTable clientList = new JTable(data,headers);
+		JScrollPane clientListScroll = new JScrollPane(clientList, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		layout.row().center().add(clientListScroll);
+		
 		JLabel incomingConn = new JLabel("Currently listening for incoming connections.");
 		//Create font.  
 		//Font Name : Default label font  
